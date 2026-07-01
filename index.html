@@ -8,6 +8,30 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<!-- ═══ META (FACEBOOK) PIXEL ═══ -->
+<!-- ضع رقم البيكسيل الخاص بك بين علامتي التنصيص بدل YOUR_PIXEL_ID، في السطرين التاليين -->
+<script>
+  const META_PIXEL_ID = '1882534605907038';
+
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', META_PIXEL_ID);
+  fbq('track', 'PageView');
+</script>
+<noscript>
+  <img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=1882534605907038&ev=PageView&noscript=1"
+  />
+</noscript>
+<!-- ═══ FIN META PIXEL ═══ -->
+
 <style>
   :root {
     --blue-dark: #0A3D62;
@@ -477,6 +501,13 @@
         `Adresse: ${address.value.trim()}\n` +
         `Téléphone (WhatsApp): ${phone.value.trim()}\n` +
         `Ville: ${city.value.trim()}`;
+
+      fbq('track', 'Lead', {
+        content_name: 'Le Trio de Choc',
+        value: total,
+        currency: 'MAD',
+        num_items: qty
+      });
 
       const waUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
       window.open(waUrl, '_blank');
