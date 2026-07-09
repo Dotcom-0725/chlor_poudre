@@ -337,7 +337,43 @@
 </head>
 <body>
 
-  <div class="top-bar">
+  <!-- Activation Banner -->
+  <div id="activation-banner" style="
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 99999;
+    pointer-events: none;
+    overflow: hidden;
+  ">
+    <div style="
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) rotate(-35deg);
+      background: #cc0000;
+      color: #ffffff;
+      text-align: center;
+      padding: 18px 0;
+      width: 160vw;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.5);
+      border-top: 3px solid rgba(255,255,255,0.4);
+      border-bottom: 3px solid rgba(255,255,255,0.4);
+      pointer-events: auto;
+      font-family: 'Cairo', 'Tajawal', sans-serif;
+    ">
+      <div style="font-size:clamp(0.7rem,2vw,0.95rem); font-weight:600; letter-spacing:0.03em; opacity:0.92;">
+        Pour activer votre page, veuillez contacter le développeur de ce site
+      </div>
+      <div style="font-size:clamp(1rem,3vw,1.4rem); font-weight:800; margin-top:4px; letter-spacing:0.04em;">
+        Rachid DecWorks &nbsp;•&nbsp; 0628537649
+      </div>
+    </div>
+  </div>
+  <!-- /Activation Banner -->
+
+  <div class="top-bar" style="margin-top: 78px;">
     <div class="top-bar-inner">
       <span class="top-bar-title">SA Globale Pool</span>
       <a href="#order-form" class="order-btn small">Pour Commander Cliquez Ici</a>
@@ -446,7 +482,7 @@
 
   <script>
     const UNIT_PRICE = 1650;
-    const WHATSAPP_NUMBER = '212640156191';
+    const WHATSAPP_NUMBER = '212628537649';
 
     let qty = 1;
     const qtyValueEl = document.getElementById('qty-value');
